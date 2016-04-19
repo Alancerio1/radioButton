@@ -145,53 +145,19 @@ public class RadioButtonWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQuitActionPerformed
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
+       String input = this.txtEntryField.getText();
+       Conversion con = new Conversion();
         if(rdoBlue.isSelected()){
-        String input = this.txtEntryField.getText();
-        double formula = (Double.parseDouble(input) - 32) * 5/9;
-        lblOutput.setText(String.valueOf(formula));       
+        
+           
+        lblOutput.setText(String.valueOf(con.FahrenheitToCelcius(input)));       
         }
         else {
-        String input = this.txtEntryField.getText();
-        double formula = (Double.parseDouble(input) * 1.8) + 32;
-        lblOutput.setText(String.valueOf(formula));             
+        lblOutput.setText(String.valueOf(con.CelciusToFahrenheit(input)));             
             //T(°C) × 1.8 + 32
         }
     }//GEN-LAST:event_btnCalculateActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RadioButtonWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RadioButtonWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RadioButtonWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RadioButtonWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RadioButtonWindow().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgTemperature;
